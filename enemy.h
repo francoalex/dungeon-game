@@ -2,7 +2,8 @@
 
 class enemy : public entity{
     public:
+        enemy();
 
     protected:
-        
+        int enemy_damage;
 };

@@ -1,3 +1,10 @@
+#ifndef ENTITY_H
+#define ENTITY_H
+
+#include <iostream>
+
+using namespace std;
+
 class entity {
     public:
         void show_stats();
@@ -6,3 +13,5 @@ class entity {
        int health;
        int attack;
 };
+
+#endif
