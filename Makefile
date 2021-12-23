@@ -1,3 +1,3 @@
 all:
-	g++ main.cpp -o dungeon-game
-	dungeon-game.exe
+	g++ *.cpp *.h -o dungeon-game
+	./dungeon-game

@@ -1,5 +1,6 @@
-#include <iostream>
+#include "player.h"
 
 int main() {
-    std::cout << "test" << std::endl;
+    player p1;
+    p1.show_stats();
 }

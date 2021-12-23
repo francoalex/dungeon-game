@@ -1,4 +1,9 @@
+#include "entity.h"
 
-class Player {
-    
-}
+class player : public entity{
+    public:
+        player();
+
+    protected:
+        int range_damage;
+};
