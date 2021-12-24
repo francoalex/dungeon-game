@@ -7,7 +7,7 @@ using namespace std;
 
 class entity {
     public:
-        void show_stats();
+        virtual void show_stats();
 
     protected:
        int health;
