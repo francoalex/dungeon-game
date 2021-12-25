@@ -1,6 +1,6 @@
 #include "entity.h"
 
-//#include 
+#include <vector>
 
 class player : public entity{
     public:
@@ -12,6 +12,11 @@ class player : public entity{
 
         void save_file();
 
+        void show_file();
+
+        void load_file();
+
     protected:
         string name;
+        //vector<string> saved_files;
 };
