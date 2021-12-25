@@ -18,5 +18,4 @@ class player : public entity{
 
     protected:
         string name;
-        //vector<string> saved_files;
 };

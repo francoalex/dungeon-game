@@ -2,6 +2,8 @@
 #include "player.h"
 #include "enemy.h"
 
+#include <stdlib.h>
+
 game::game(){
     init_game();
 }
@@ -16,21 +18,24 @@ void game::init_game(){
     int input;
     cin >> input;
 
+    //Clears console
+    system("clear");
+    //For windows
+    //system("cls");
+
     player p1;
     switch(input){
         case 1:
         {
             p1.new_file();
             p1.save_file();
-            //p1.show_files();
-            //p1.show_stats();
             break;
         }
         case 2:
         {
-            cout << "Working on it" << "\n";
+            p1.show_file();
             p1.load_file();
-            p1.show_stats();
+            //p1.show_stats();
             break;
         }
         case 3:
