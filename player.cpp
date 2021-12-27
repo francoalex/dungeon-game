@@ -54,12 +54,6 @@ void player::show_file(){
 }
 
 void player::load_file(){
-    string input;
-    cout << "Load file (y/n)?" << "\n";
-    cin >> input;
-
-    //TODO: add check to see if user wants to load file.
-
     string info;
     ifstream file_info("save_file.txt");
     while(!file_info.fail() && !file_info.eof()){

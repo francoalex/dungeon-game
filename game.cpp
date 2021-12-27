@@ -34,8 +34,23 @@ void game::init_game(){
         case 2:
         {
             p1.show_file();
-            p1.load_file();
-            //p1.show_stats();
+
+            int input;
+            cout << "Load file (1 yes / 2 no)?" << "\n";
+            cin >> input;
+
+            while(input != 1 && input != 2){
+                cout << "Load file (1 yes / 2 no)?" << "\n";
+                cin >> input;
+            }
+
+            if(input == 1){
+                p1.load_file();
+                p1.show_stats();
+            }else{
+                system("clear");
+                init_game();
+            }
             break;
         }
         case 3:
