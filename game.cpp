@@ -6,6 +6,7 @@
 
 game::game(){
     init_game();
+    game_intro();
 }
 
 void game::init_game(){
@@ -71,4 +72,17 @@ void game::init_game(){
             break;
         }
     }   
-}          
+}     
+
+void game::game_intro(){
+    cout << "Once again, welcome to Dungeon Game."  << "\n";
+    cout << "Here you will be able to move around"  << "\n";
+    cout << "a map using WASD. You are represented" << "\n";
+    cout << "as a 'T' while enemies are 'O'. Run"   << "\n";
+    cout << "into one and a battle will commence."  << "\n";
+    cout << "That is all for now, good luck!"       << "\n";
+}
+
+void game::draw_map(){
+    
+}
