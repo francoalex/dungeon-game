@@ -1,12 +1,11 @@
-#include "entity.h"
+#ifndef PLAYER_H
+#define PLAYER_H
 
-#include <vector>
+#include "entity.h"
 
 class player : public entity{
     public:
         player();
-
-        void show_stats();
 
         void new_file();
 
@@ -16,6 +15,16 @@ class player : public entity{
 
         void load_file();
 
+        int get_exp();
+
+        int get_max_exp();
+
+        void gain_exp();
+
+        void death();
+
     protected:
-        string name;
+        int exp, max_exp;
 };
+
+#endif

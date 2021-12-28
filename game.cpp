@@ -1,15 +1,67 @@
 #include "game.h"
 #include "player.h"
 #include "enemy.h"
+#include "battle.h"
 
 #include <stdlib.h>
 
 game::game(){
-    init_game();
+    player p1;
+
+    init_game(p1);
     game_intro();
+
+    while(p1.is_alive()){
+        enemy e1;
+        battle b1;
+
+        while(e1.is_alive()){
+            b1.show_ui(p1.get_exp(), p1.get_max_exp(), 
+                            p1.get_health(), p1.get_max_health(),
+                            e1.get_health(), e1.get_max_health(),
+                            p1.get_name(), e1.get_name());
+
+            int battle_input;
+            cin >> battle_input;
+
+            switch(battle_input){
+                case 1:
+                {
+                    b1.do_damage(p1, e1);
+                    break;
+                }
+                case 2:
+                {
+                    cout << "Working on it" << "\n";
+                    break;
+                }
+                case 3:
+                {
+                    break;
+                }
+                default:
+                {
+                    cout << "Enter 1-3" << "\n";
+                    break;
+                }
+            }
+                
+            //b1.do_damage(p1, e1);
+
+            if(!p1.is_alive()){
+                p1.death();
+                break;
+            }
+
+            system("clear");
+        }
+
+        p1.save_file();
+        p1.gain_exp();
+    }
 }
 
-void game::init_game(){
+void game::init_game(player& p1){
     cout << "+--------------------------+" << "\n";
     cout << "| Welcome to Dungeon Game  |" << "\n";
     cout << "| 1. New Game 2. Load File |" << "\n";
@@ -24,7 +76,6 @@ void game::init_game(){
     //For windows
     //system("cls");
 
-    player p1;
     switch(input){
         case 1:
         {
@@ -50,14 +101,14 @@ void game::init_game(){
                 p1.show_stats();
             }else{
                 system("clear");
-                init_game();
+                init_game(p1);
             }
             break;
         }
         case 3:
         {
             cout << "Game made by me." << "\n";
-            init_game();
+            init_game(p1);
             break;
         }
         case 4:
@@ -68,7 +119,7 @@ void game::init_game(){
         default:
         {
             cout << "Enter input 1-4." << "\n";
-            init_game();
+            init_game(p1);
             break;
         }
     }   

@@ -1,3 +1,6 @@
+#ifndef ENEMY_H
+#define ENEMY_H
+
 #include "entity.h"
 
 class enemy : public entity{
@@ -7,3 +10,5 @@ class enemy : public entity{
     protected:
         int enemy_damage;
 };
+
+#endif

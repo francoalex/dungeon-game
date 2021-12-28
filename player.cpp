@@ -4,15 +4,13 @@
 #include <iomanip>
 
 player::player(){
-    //cout << "Created player" << "\n";
+    cout << "Created player" << "\n";
+    this->name = "NONE";
     this->health = 10;
-    this->attack = 1;       
-}
-
-void player::show_stats(){
-    cout << this->name << "'s Stats: " << "\n";
-    cout << "health: " << this->health << "\n";
-    cout << "attack: " << this->attack << "\n";
+    this->max_health = 10;
+    this->attack = 1; 
+    this->exp = 0;
+    this->max_exp = 10;      
 }
 
 void player::new_file(){
@@ -61,4 +59,22 @@ void player::load_file(){
         file_info >> this->health;
         file_info >> this->attack;
     }
+}
+
+int player::get_exp(){
+    return this->exp;
+}
+
+int player::get_max_exp(){
+    return this->max_exp;
+}
+
+void player::gain_exp(){
+    this->exp += 1;
+}
+
+void player::death(){
+    system("clear");
+    cout << "Death is upon you." << "\n";
+    cout << "Farewell young traveler." << "\n";
 }
