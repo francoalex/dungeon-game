@@ -1,3 +1,3 @@
 all:
-	g++ *.cpp *.h -o dungeon-game
+	g++ src/*.cpp main.cpp header/*.h -o dungeon-game
 	./dungeon-game

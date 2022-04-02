@@ -1,4 +1,4 @@
-#include "entity.h"
+#include "../header/entity.h"
 
 void entity::show_stats(){
     cout << "Name: " << this->name << "\n";

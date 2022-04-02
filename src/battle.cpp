@@ -1,4 +1,4 @@
-#include "battle.h"
+#include "../header/battle.h"
 
 #include <iostream>
 #include <iomanip>

@@ -1,7 +1,7 @@
-#include "game.h"
-#include "player.h"
-#include "enemy.h"
-#include "battle.h"
+#include "../header/game.h"
+#include "../header/player.h"
+#include "../header/enemy.h"
+#include "../header/battle.h"
 
 #include <stdlib.h>
 
@@ -10,6 +10,9 @@ game::game(){
 
     init_game(p1);
     game_intro();
+
+    init_map();
+    draw_map();
 
     while(p1.is_alive()){
         enemy e1;
@@ -134,6 +137,20 @@ void game::game_intro(){
     cout << "That is all for now, good luck!"       << "\n";
 }
 
+void game::init_map(){
+    for(int i = 0; i < ROWS; i++){
+        for(int j = 0; j < COLS; j++){
+            map[i][j] = 'X';
+        }
+    }
+}
+
 void game::draw_map(){
-    
+    for(int i = 0; i < ROWS; i++){
+        for(int j = 0; j < COLS; j++){
+            cout << map[i][j];
+        }
+
+        cout << "\n";
+    }
 }

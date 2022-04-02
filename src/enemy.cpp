@@ -1,4 +1,4 @@
-#include "enemy.h"
+#include "../header/enemy.h"
 
 enemy::enemy(){
     cout << "Created enemy" << "\n";
